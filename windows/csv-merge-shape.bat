@@ -19,7 +19,7 @@ FOR /r %%f in (%1\build*.txt) do (
 	set shape_name=%building_name%!texte:~0,2!
 	
 	REM powershell로 csv 파일로 변환 
-	Powershell.exe -executionpolicy remotesigned -File  exec.ps1 %%~nf%%~xf !csv_name!.csv
+	Powershell.exe -executionpolicy remotesigned -File  csv-merge-shape.ps1 %%~nf%%~xf !csv_name!.csv
 	
 	set sql=SELECT^
 			!shape_name!.BDTYP_CD as BDTYP_CD,^
